@@ -1,0 +1,11 @@
+body{
+    background-color: black;
+    color: white;
+}
+.titulo{
+    font-size: 40px;
+    color: rebeccapurple;
+}
+.skills{
+    color: green;
+}

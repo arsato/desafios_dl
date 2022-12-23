@@ -1,0 +1,119 @@
+@font-face {
+    font-family: Raleway;
+    src: url("../font/Raleway.ttf");
+  }
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    font-family: Raleway;
+ }
+
+header{
+    margin: 0;
+    height: 73px;
+    padding: 0;
+}
+
+header h1{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 11px;
+}
+
+.view img{
+    width: 100%;
+    margin: 0 auto;
+}
+
+main .bloque{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+main section article{
+    width: 49%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+main p{
+    padding-left: 40px;
+    padding-right: 40px;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+}
+
+main img{
+    width: 399px;
+    height: 237px;
+    vertical-align: middle;
+}
+
+.features{
+    background-color: #1E1A13;
+    color: white;
+    height: 348px;
+    padding: 20px;
+}
+
+.features .bloque{
+    margin: auto;
+    padding: 40px;
+} 
+
+.features h2{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 80px;
+}
+.features article{
+    display: inline-block;
+    width: 32%;
+}
+
+.features article i{
+    display: block;
+    text-align: center;
+}
+
+.features article p{
+    text-align: center;
+    font-size: 25px;
+}
+
+.photos{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.photos img{
+    width: 316px;
+    height: 202px;
+    margin: 10px;
+    display: inline-block;
+}
+
+footer{
+    background-color: #1E1A13;
+    color: white;
+    height: 102px;
+    text-align: center;
+}
+
+footer p{
+    font-size: 20px;
+    padding: 39px;
+    margin: 0;
+}

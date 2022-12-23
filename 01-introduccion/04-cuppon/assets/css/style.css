@@ -1,0 +1,65 @@
+:root{
+    --dark-blue: #212529;
+    --gray: #707070;
+    --green: #28a745;
+    --light: #f9f8fa;
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+nav{
+    background-color: var(--green);
+}
+
+.cupones .card-body .card-title{
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: var(--dark-blue);
+}
+
+.cupones .card-body .card-text{
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--gray);
+}
+
+.cupones .card-body .address-text{
+    font-weight: 300;
+    font-size: 0.813rem;
+    color: var(--gray);
+}
+
+.cupones .card-body .price-text{
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--gray);
+}
+
+.cupones .card-body .price-text strong{
+    font-size: 1.25rem;
+    color:#28a745;
+}
+
+.contacto{
+    background-color: var(--green);
+    color: white;
+    font-size: 1rem;
+}
+
+.contacto p{
+    font-weight: 500;
+    font-size: 1.313rem;
+}
+
+.contacto input::placeholder{
+    font-weight: 300;
+}
+
+footer p{
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--gray);
+}

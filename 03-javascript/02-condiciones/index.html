@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Condiciones - Parte 1</title>
+</head>
+<body>
+    <img class="image" id="fma" src="./assets/img/fma.jpg">
+</body>
+<script>
+    const imagen = document.getElementById("fma")
+    let borde = false
+    imagen.addEventListener("click", function(){
+        if(borde){
+            this.className = "sinBorde"
+            borde = false
+        }
+        else{
+            this.className = "conBorde"
+            borde = true
+        }
+    })
+</script>
+</html>
