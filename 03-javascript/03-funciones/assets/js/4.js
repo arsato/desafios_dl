@@ -23,7 +23,7 @@ function cambioColor(event){
         event.target.style.backgroundColor = color
 }
 
-document.getElementById("ele1").addEventListener("click", cambioColor)
-document.getElementById("ele2").addEventListener("click", cambioColor)
-document.getElementById("ele3").addEventListener("click", cambioColor)
-document.getElementById("ele4").addEventListener("click", cambioColor)
+boxes = document.querySelectorAll("div[class=box]")
+boxes.forEach(element => {
+    element.addEventListener("click", cambioColor)
+});
