@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>E-commerce Layout</title>
+</head>
+<body>
+    <div class="grid-container">
+        <nav class="header">
+            <h1>Propiedades encontradas: <span id="encontrados"></span></h1>
+        </nav>
+        <aside class="sidebar">
+            <p>Cantidad de cuartos:</p>
+            <input type="number" id="cuartos">
+            <br>
+            <d>Metros cuadrados</d>
+            <div class="mts-cuadrados">
+                <div class="mts">
+                    <p>Desde:</p>
+                    <input type="number" id="mts-desde">
+                </div>
+                <div class="mts">
+                    <p>Hasta:</p>
+                    <input type="number" id="mts-hasta">
+                </div>
+            </div>
+            <br>
+            <div class="actionButtons">
+                <input type="button" value="Buscar" id="buscar"> 
+                <input type="button" value="Limpiar" id="limpiar">
+            </div>
+        </aside>
+        <main class="main" id="main">
+        </main>
+    </div>
+<script>
+
+const propiedades = [
+    {
+        "titulo": "Casa de campo",
+        "descripcion": "Hermosa casa a solo 15 min de la naturaleza",
+        "src": "./assets/img/casa.jpg",
+        "cuartos": 2,
+        "metros": 50
+    },{
+        "titulo": "Casa de campo",
+        "descripcion": "Hermosa casa a solo 15 min de la naturaleza",
+        "src": "./assets/img/casa.jpg",
+        "cuartos": 2,
+        "metros": 120
+    },{
+        "titulo": "Casa de campo",
+        "descripcion": "Hermosa casa a solo 15 min de la naturaleza",
+        "src": "./assets/img/casa.jpg",
+        "cuartos": 2,
+        "metros": 80
+    },{
+        "titulo": "Casa de campo",
+        "descripcion": "Hermosa casa a solo 15 min de la naturaleza",
+        "src": "./assets/img/casa.jpg",
+        "cuartos": 5,
+        "metros": 220
+    },{
+        "titulo": "Casa de campo",
+        "descripcion": "Hermosa casa a solo 15 min de la naturaleza",
+        "src": "./assets/img/casa.jpg",
+        "cuartos": 4,
+        "metros": 180
+    },{
+        "titulo": "Casa de campo",
+        "descripcion": "Hermosa casa a solo 15 min de la naturaleza",
+        "src": "./assets/img/casa.jpg",
+        "cuartos": 3,
+        "metros": 150
+    }
+]
+
+const sectionMain = document.getElementById("main")
+const inputCuartos = document.getElementById("cuartos")
+const inputDesde = document.getElementById("mts-desde")
+const inputHasta = document.getElementById("mts-hasta")
+const buttonBuscar = document.getElementById("buscar")
+const buttonLimpiar = document.getElementById("limpiar")
+const textTotal = document.getElementById("encontrados")
+
+function setTotal(array){
+    textTotal.innerText = array.length
+}
+
+function alterMain(array){
+    propiedadesHTML = array.map( val => `
+    <article class="card">
+        <div class="card-img">
+            <img src="${val.src}" alt="propiedad">
+        </div>
+        <div class="card-body">
+            <h3>${val.titulo}</h3>
+            <div class="info">
+                <p>Cuartos: ${val.cuartos}</p>
+                <p>Metros: ${val.metros}</p>
+            </div>
+            <p class="descripcion">${val.descripcion}</p>
+            <button>Ver más</button>
+        </div>
+    </article>
+    `)
+    let propiedades = propiedadesHTML.join("")
+    sectionMain.innerHTML = propiedades
+}
+
+function init(){
+    alterMain(propiedades)
+    setTotal(propiedades)
+}
+
+function filterByRooms(array){
+    numCuartos = inputCuartos.value
+    if(!numCuartos)
+    {
+        alert("No se eligió cantidad de cuartos")
+        return array
+    }
+    arrayFilter = array.filter(val => val.cuartos === +numCuartos)
+    return arrayFilter
+}
+
+function filterByMeters(array){
+    metrosDesde = inputDesde.value
+    metrosHasta = inputHasta.value
+    if(!metrosDesde){
+        arrayFilter = array.filter(val => val.metros <= +metrosHasta)
+        alert("No se eligió una cantidad de metros mínima")
+    }
+    if (!metrosHasta){
+        arrayFilter = array.filter(val => val.metros >= +metrosDesde)
+        alert("No se eligió una cantidad de metros máxima")
+    }
+    else
+    {
+        arrayFilter = array.filter(val => val.metros >= +metrosDesde && val.metros <= +metrosHasta)
+    }
+    return arrayFilter
+}
+
+buttonBuscar.addEventListener('click', function(){
+    if(inputCuartos.value === "" && inputDesde.value === "" && inputHasta.value === "")
+    {
+        alert("Hay que elegir al menos un filtro")
+        return null
+    }
+    finalArray = filterByRooms(propiedades)
+    finalArray = filterByMeters(finalArray)
+    alterMain(finalArray)
+    setTotal(finalArray)
+})
+
+buttonLimpiar.addEventListener('click', function(){
+    inputCuartos.value = ""
+    inputDesde.value = ""
+    inputHasta.value = ""
+    init()
+})
+
+init()
+
+</script>
+</body>
+</html>
