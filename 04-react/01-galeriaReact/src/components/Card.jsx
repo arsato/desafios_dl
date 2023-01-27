@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 
-export const Tarjeta = ({ image, title, desc }) => {
+export const ImageCard = ({ image, title, desc }) => {
   return (
     <Card className="cardComplete bg-dark">
       <Card.Img className="cardImage" variant="top" src={image} alt={title} />
@@ -13,4 +13,4 @@ export const Tarjeta = ({ image, title, desc }) => {
   );
 };
 
-export default Tarjeta;
+export default ImageCard;
