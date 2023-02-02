@@ -1,6 +1,5 @@
 // components/Formulario.js
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
 
 const Login = ({ estadoIngreso }) => {
   //Estados del formulario
@@ -24,6 +23,7 @@ const Login = ({ estadoIngreso }) => {
         <label>Email</label>
         <input
           className="form-control"
+          placeholder="Ingresa tu correo"
           type="email"
           name="email"
           onChange={(e) => setEmail(e.target.value)}
@@ -34,19 +34,20 @@ const Login = ({ estadoIngreso }) => {
         <label>Password</label>
         <input
           className="form-control"
+          placeholder="********"
           type="password"
           name="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
       </div>
-      <Button
+      <button
         className="btn btn-dark mt-3"
         type="submit"
         disabled={!email || !password}
       >
         Iniciar Sesión
-      </Button>
+      </button>
     </form>
   );
 };

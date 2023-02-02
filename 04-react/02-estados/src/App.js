@@ -11,6 +11,7 @@ function App() {
   };
   return (
     <div className="todo">
+      <h1>Formulario de correo</h1>
       <Login estadoIngreso={estadoIngreso} />
       <Alerta mensaje={data.mensaje} variante={data.variante} />
     </div>
