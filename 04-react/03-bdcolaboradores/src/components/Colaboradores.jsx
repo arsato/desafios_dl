@@ -87,7 +87,7 @@ const Colaboradores = () => {
             return false;
           })
           .map((colab) => (
-            <li key={colab.nombre}>
+            <li key={colab.id}>
               {colab.nombre} - {colab.correo}
             </li>
           ))}
