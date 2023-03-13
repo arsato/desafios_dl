@@ -80,7 +80,6 @@ const Colaboradores = () => {
       <ul>
         {listaColaboradores
           .filter((colab) => {
-            if (!buscar.toLowerCase()) return true;
             if (colab.nombre.toLowerCase().includes(buscar.toLowerCase())) {
               return true;
             }
