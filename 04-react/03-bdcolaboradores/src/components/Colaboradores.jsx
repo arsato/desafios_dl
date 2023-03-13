@@ -71,8 +71,7 @@ const Colaboradores = () => {
           value={correoColaborador}
         />
         <button className=" mt-3 btn btn-success" style={{ width: "300px" }}>
-          {" "}
-          Agregar Colaborador{" "}
+          Agregar Colaborador
         </button>
       </form>
       <hr className="mt-4" />
