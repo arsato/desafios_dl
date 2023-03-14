@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { BaseColaboradores } from "../BaseColaboradores";
 
-const Colaboradores = () => {
-  const [buscar, setBuscar] = useState("");
+const Colaboradores = ({buscador}) => {
   const [nombreColaborador, setNombreColaborador] = useState("");
   const [correoColaborador, setCorreoColaborador] = useState("");
   const [listaColaboradores, setListaColaboradores] =
@@ -37,18 +36,6 @@ const Colaboradores = () => {
 
   return (
     <div>
-      <div className="bg-dark text-light d-flex justify-content-between align-items-center">
-        <h1 className="ms-3">Buscador de Colaboradores </h1>
-        <input
-          className="me-3"
-          style={{ width: "300px" }}
-          type="text"
-          value={buscar}
-          placeholder="Busca un colaborador"
-          onChange={(e) => setBuscar(e.target.value)}
-        />
-      </div>
-
       <form
         className="d-flex flex-column mt-3 ms-3"
         onSubmit={enviarFormulario}
@@ -79,7 +66,7 @@ const Colaboradores = () => {
       <ul>
         {listaColaboradores
           .filter((colab) => {
-            if (colab.nombre.toLowerCase().includes(buscar.toLowerCase())) {
+            if (colab.nombre.toLowerCase().includes(buscador.toLowerCase())) {
               return true;
             }
             return false;
