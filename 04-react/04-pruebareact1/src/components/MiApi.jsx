@@ -3,10 +3,6 @@ import ImageCard from "./Card";
 
 const MiApi = ({ search }) => {
   const [data, setData] = useState([]);
-  const [buscar, setBuscar] = useState("");
-  const valorBuscado = (dataestado) => {
-    setBuscar(dataestado);
-  };
 
   const getInfo = async () => {
     const response = await fetch(
@@ -21,7 +17,6 @@ const MiApi = ({ search }) => {
   }, []);
 
   const tituloAsc = () => {
-    console.log("Ordenado Ascendente");
     let newdata = [...data];
     let result = newdata.sort((a, b) =>
       a.name.toLowerCase().localeCompare(b.name.toLowerCase())
@@ -30,7 +25,6 @@ const MiApi = ({ search }) => {
   };
 
   const tituloDesc = () => {
-    console.log("Ordenado Descendente");
     let newdata = [...data];
     let result = newdata.sort((a, b) =>
       b.name.toLowerCase().localeCompare(a.name.toLowerCase())
@@ -39,7 +33,6 @@ const MiApi = ({ search }) => {
   };
 
   const fechaAsc = () => {
-    console.log("Ordenado fecha");
     let newdata = [...data];
     let result = newdata.sort(
       (a, b) => new Date(a.first_air_date) - new Date(b.first_air_date)
@@ -48,7 +41,6 @@ const MiApi = ({ search }) => {
   };
 
   const fechaDesc = () => {
-    console.log("Ordenado fecha");
     let newdata = [...data];
     let result = newdata.sort(
       (a, b) => new Date(b.first_air_date) - new Date(a.first_air_date)

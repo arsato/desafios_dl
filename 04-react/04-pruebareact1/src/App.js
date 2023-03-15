@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import MiApi from "./components/MiApi";
 import Header from "./components/Header";
 
 function App() {
   const [buscar, setBuscar] = useState("");
-  const valorBuscado = (dataestado) => {
-    setBuscar(dataestado);
+  const valorBuscado = (searchData) => {
+    setBuscar(searchData);
   };
   console.log(buscar);
   return (
