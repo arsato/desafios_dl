@@ -50,38 +50,38 @@ const MiApi = ({ search }) => {
 
   return (
     <div>
-      <div class="btn-group">
+      <div className="btn-group">
         <button
           type="button"
-          class="btn btn-danger dropdown-toggle"
+          className="btn btn-danger dropdown-toggle"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
           Ordenar resultados por
         </button>
-        <ul class="dropdown-menu">
+        <ul className="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#" onClick={getInfo}>
+            <a className="dropdown-item" href="#" onClick={getInfo}>
               Predeterminado
             </a>
           </li>
           <li>
-            <a class="dropdown-item" href="#" onClick={tituloAsc}>
+            <a className="dropdown-item" href="#" onClick={tituloAsc}>
               Título (A a Z)
             </a>
           </li>
           <li>
-            <a class="dropdown-item" href="#" onClick={tituloDesc}>
+            <a className="dropdown-item" href="#" onClick={tituloDesc}>
               Título (Z a A)
             </a>
           </li>
           <li>
-            <a class="dropdown-item" href="#" onClick={fechaAsc}>
+            <a className="dropdown-item" href="#" onClick={fechaAsc}>
               Fecha de estreno ascendente
             </a>
           </li>
           <li>
-            <a class="dropdown-item" href="#" onClick={fechaDesc}>
+            <a className="dropdown-item" href="#" onClick={fechaDesc}>
               Fecha de estreno descendente
             </a>
           </li>
@@ -108,6 +108,7 @@ const MiApi = ({ search }) => {
                 date={value.first_air_date}
                 vote={value.vote_average}
                 overview={value.overview}
+                key={value.id}
               />
             ))}
         </div>

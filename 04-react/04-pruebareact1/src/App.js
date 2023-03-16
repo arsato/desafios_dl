@@ -7,7 +7,7 @@ function App() {
   const valorBuscado = (searchData) => {
     setBuscar(searchData);
   };
-  console.log(buscar);
+
   return (
     <div>
       <Header valorBuscado={valorBuscado} />
