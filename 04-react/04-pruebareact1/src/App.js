@@ -1,6 +1,8 @@
 import { useState} from "react";
 import MiApi from "./components/MiApi";
 import Header from "./components/Header";
+import "./App.css";
+
 
 function App() {
   const [buscar, setBuscar] = useState("");

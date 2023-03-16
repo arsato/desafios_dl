@@ -2,7 +2,7 @@ import React from "react";
 
 const ImageCard = ({ image, name, date, vote, overview }) => {
   return (
-    <div className="card bg-dark" style={{ width: "320px" }}>
+    <div className="card bg-dark">
       <div className="card-body">
         <img
           className="card-img-top"
@@ -14,7 +14,12 @@ const ImageCard = ({ image, name, date, vote, overview }) => {
           {[date.slice(-2), date.slice(5, 7), date.slice(0, 4)].join("-")}
         </p>
         <p className="card-text">Puntuación: {vote}</p>
-        <p className="card-text">{overview}</p>
+        <div className="overlay">
+          <div className="card-text description">
+          <h5 className="card-title">{name}</h5>
+            <p className="description-text">{overview}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
