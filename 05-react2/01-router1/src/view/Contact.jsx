@@ -6,7 +6,7 @@ const Contact = () => {
     <h3 className="mt-5">Envíanos tu mensaje, te responderemos a la brevedad</h3>
     <form className="mt-4">
       <div className="correo mb-4">
-        <label for="correoInput" className="form-label">
+        <label HtmlFor="correoInput" className="form-label">
           Correo electrónico
         </label>
         <input
@@ -17,7 +17,7 @@ const Contact = () => {
         />
       </div>
       <div className="mensaje mb-4">
-        <label for="textoMensaje" class="form-label">
+        <label HtmlFor="textoMensaje" className="form-label">
           Mensaje
         </label>
         <textarea
@@ -26,7 +26,7 @@ const Contact = () => {
           rows="3"
         ></textarea>
       </div>
-      <button type="submit" class="enviar btn btn-danger">Enviar mensaje</button>
+      <button type="submit" className="enviar btn btn-danger">Enviar mensaje</button>
     </form>
     </div>
   );
