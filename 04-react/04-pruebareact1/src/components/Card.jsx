@@ -7,6 +7,7 @@ const ImageCard = ({ image, name, date, vote, overview }) => {
         <img
           className="card-img-top"
           src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${image}`}
+          alt={name}
         ></img>
         <h5 className="card-title">{name}</h5>
         <p className="card-text">

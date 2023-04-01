@@ -6,13 +6,10 @@ import "./App.css";
 
 function App() {
   const [buscar, setBuscar] = useState("");
-  const valorBuscado = (searchData) => {
-    setBuscar(searchData);
-  };
 
   return (
     <div>
-      <Header valorBuscado={valorBuscado} />
+      <Header valorBuscado={setBuscar} />
       <div className="container-fluid mt-3">
         <MiApi search={buscar} />
       </div>
