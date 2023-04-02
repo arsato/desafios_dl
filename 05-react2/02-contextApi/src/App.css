@@ -56,7 +56,6 @@
   width: 100%;
   transition: 0.5s ease;
   opacity: 0;
-  color: white;
 }
 
 .card:hover {
@@ -95,7 +94,6 @@
 .fa-heart {
   stroke: rgb(136, 136, 136);
   stroke-width: 20;
-  color: white;
   font-size: 35px;
   transition: 1s ease;
 }
@@ -107,8 +105,4 @@
   -webkit-transform: scale(1.05);
   -o-transform: scale(1.05);
   transform: scale(1.05);
-}
-
-.liked {
-  color: red;
 }

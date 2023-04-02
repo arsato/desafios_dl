@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import MyContext from "../MyContext";
+import Heart from "./Heart";
 
 const FilteredGallery = () => {
   const { dataFotos, setDataFotos } = useContext(MyContext);
@@ -20,11 +21,7 @@ const FilteredGallery = () => {
             className="like-button"
             title="Me gusta!"
           >
-            {photo.liked === true ? (
-              <i className="fa fa-heart liked"></i>
-            ) : (
-              <i className="fa fa-heart"></i>
-            )}
+            <Heart liked={photo.liked} />
           </div>
           <p className="overlay text-description"> {photo.text}</p>
           <img src={photo.src} className="card-img" alt={photo.text} />
