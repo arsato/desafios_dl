@@ -8,6 +8,7 @@ const Navbar = () => {
         <p>
           <Link to="/">Home</Link>
         </p>
+        <p> | </p>
         <p>
           <Link to="favourites">Favoritas</Link>
         </p>
