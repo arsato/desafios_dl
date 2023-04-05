@@ -7,8 +7,6 @@ const Pokemons = () => {
 
   const [data, setData] = useState([]);
   const [pokeName, setPokeName] = useState("")
-  const [loaded, setLoaded] = useState(false);
-  const [error, setError] = useState(false);
 
   const navigate = useNavigate();
 
@@ -17,21 +15,17 @@ const Pokemons = () => {
         navigate(`/pokemons/${pokeName}`);
   };
 
-
   const getData = async () => {
     try {
       const res = await fetch(url);
       if (!res.ok) {
         setError(true);
       }
-      let lista = await res.json();
-      setData(lista.results);
+      let pokedata = await res.json();
+      setData(pokedata.results);
     } catch (error) {
       console.log(error.message);
-    } finally {
-      setLoaded(true);
-      console.log(data);
-    }
+    } 
   };
 
   useEffect(() => {
@@ -40,11 +34,10 @@ const Pokemons = () => {
 
   return (
     <div className="pokeView">
-      <h1>Pokemons</h1>
-      <form onSubmit={irAPokemon}>
-        <label>Selecciona un Pokemon</label>
+      <h1>Pokemon Data</h1>
+      <form className="pokeForm" onSubmit={irAPokemon}>
         <select className="form-select" onChange={({ target }) => setPokeName(target.value)}>
-            <option value="0">Pokemon</option>
+            <option value="0">Selecciona un Pokemon</option>
           {data.map((pokemon, i) => (
             <option key={i+1} value={pokemon.name}>
               {(i+1).toString().padStart(3,"0") + " - " + pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}

@@ -11,52 +11,77 @@
 }
 
 .logo {
-  width: 80px;
+  width: 70px;
 }
 
-.places a{
+.places {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.places a {
   text-decoration: none;
   font-size: 1.5rem;
 }
 
-.active{
+.active {
   color: red;
-  text-shadow:1px 1px 2px black;
+  text-shadow: 1px 1px 2px black;
 }
 
 .inactive {
   color: white;
 }
 
-.pokeView{
+.charizard {
+  width: auto;
+  height: 500px;
+}
+
+.pokeView {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
+.pokeForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 400px;
 }
 
 .card {
-  height: 500px;
-  width: 300px;
+  min-width: 500px;
+  min-height: 350px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 30px;
+  border: 1px solid rgb(151, 110, 110);
+  border-radius: 40px;
+  margin-bottom: 20px;
 }
 
-.text-title{
+.text-title {
   text-align: center;
   font-size: 24px;
   font-weight: bold;
 }
 
-.card-img{
+.card-img {
   height: 200px;
   width: 200px;
-  border: 1px solid black;
+  border: 1px solid rgb(151, 110, 110);
 }
-.text-description{
+
+.stat {
   text-align: left;
-  font-size: 12px;
+  font-weight: bold;
+}
+.stat-value {
+  text-align: end;
 }

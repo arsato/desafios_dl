@@ -6,13 +6,12 @@ const Navbar = () => {
   return (
     <div className="navbar bg-dark text-light d-flex">
       <div className="navbar-brand">
-        <img className="logo" src="./pokeball.png" />
+        <img className="logo" src="https://www.freeiconspng.com/uploads/file-pokeball-png-0.png" />
       </div>
       <div className="places">
         <NavLink className={setActiveClass} to="/">
           Home
         </NavLink>
-        {" - "}
         <NavLink className={setActiveClass} to="/pokemons">
           Pokemons
         </NavLink>
