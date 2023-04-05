@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 80px;
+}
+
+.places a{
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.active{
+  color: red;
+  text-shadow:1px 1px 2px black;
+}
+
+.inactive {
+  color: white;
+}
+
+.pokeView{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.card {
+  height: 500px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-title{
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card-img{
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+}
+.text-description{
+  text-align: left;
+  font-size: 12px;
+}
