@@ -3,7 +3,7 @@ import Navbar from './components/Navbar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './views/Home'
 import Pokemons from './views/Pokemons'
-import PokeDetail from './components/PokeDetail'
+import PokeDetail from './views/PokeDetail'
 
 function App() {
   return (

@@ -54,7 +54,10 @@ const PokeDetail = () => {
     return (
       <div className="pokeView">
         <div className="card text-bg-dark">
-          <img src={photo.front_default} className="card-img" />
+          <img
+            src={photo.other["official-artwork"].front_default}
+            className="card-img"
+          />
           <div className="card-text">
             <p className="text-title">
               {name.charAt(0).toUpperCase() + name.slice(1)}
@@ -96,9 +99,17 @@ const PokeDetail = () => {
     );
   };
 
-  return <div className="mt-5">{loaded ? dataCard() : <div className="pokeView">
-  <div className="alert alert-secondary">Cargando data...</div>
-</div>}</div>;
+  return (
+    <div className="mt-5">
+      {loaded ? (
+        dataCard()
+      ) : (
+        <div className="pokeView">
+          <div className="alert alert-secondary">Cargando data...</div>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default PokeDetail;

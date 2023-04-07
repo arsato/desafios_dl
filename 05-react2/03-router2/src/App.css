@@ -49,8 +49,18 @@
 .pokeForm {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   min-width: 400px;
+}
+
+.dropdown-menu {
+  overflow: auto;
+  max-height: 250px;
+  min-width: 400px;
+}
+
+.buscador{
+  width: 100%;
 }
 
 .card {
