@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Pokemons = () => {
-  const url = "https://pokeapi.co/api/v2/pokemon/?limit=811";
+  const url = "https://pokeapi.co/api/v2/pokemon/?limit=1015";
 
   const [data, setData] = useState([]);
   const [data2, setData2] = useState([]);
@@ -35,11 +35,10 @@ const Pokemons = () => {
         const data = await res.json();
         return data;
       });
-
+      
       const pokedetails = await Promise.all(promises);
       setData(pokelist);
       setData2(pokedetails);
-      console.log(data2);
     } catch (error) {
       console.log(error);
     } finally {

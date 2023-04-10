@@ -11,15 +11,15 @@ const PokeDetail = () => {
 
   const { name } = useParams();
 
-  const getPersonaje = async () => {
+  const getPokemon = async () => {
     try {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
       if (!response.ok) {
         setError(true);
       }
-      let personaje = await response.json();
-      setData(personaje.stats);
-      setPhoto(personaje.sprites);
+      let pokemon = await response.json();
+      setData(pokemon.stats);
+      setPhoto(pokemon.sprites);
     } catch (error) {
       console.log(error.message);
     } finally {
@@ -28,7 +28,7 @@ const PokeDetail = () => {
   };
 
   useEffect(() => {
-    getPersonaje();
+    getPokemon();
   }, []);
 
   const handleClick = (e) => {
