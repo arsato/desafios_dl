@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: brown;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.navbar-brand {
+  color: antiquewhite;
+  cursor: pointer;
+}
