@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { PizzaContext } from "../PizzaContext";
+import CartCard from "../components/CartCard";
 
 const Carrito = () => {
-  return (
-    <div>Carrito</div>
-  )
-}
+  const { carrito, setCarrito } = useContext(PizzaContext);
 
-export default Carrito
+  return (
+    <div>
+      <div className="carrito-titulo">Detalles del pedido:</div>
+      <div className="carrito-detalles">
+          {carrito
+            .filter((value) => {
+              if (value.qty > 0) {
+                return true;
+              }
+              return false;
+            })
+            .map((value) => (
+              <CartCard key={value.id+"A"} image={value.img} name={value.name} price={value.price} id={value.id} qty={value.qty} />
+            ))}
+      </div>
+    </div>
+  );
+};
+
+export default Carrito;
