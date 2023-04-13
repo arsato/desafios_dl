@@ -2,25 +2,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Roboto;
 }
 
-/* .App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} */
-
+/*Navbar related CSS */
 .navbar {
   padding-left: 50px;
   padding-right: 50px;
-  background-color: brown;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-content: center;
   height: 80px;
-/*   width: 70%; */
-  color: white
+  color: white;
 }
 
 .navbar-brand {
@@ -36,24 +30,59 @@
 .shopping-cart {
   cursor: pointer;
   text-decoration: none;
-  
+  font-size: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.navbar .counter-show {
+.counter {
   border-radius: 50%;
   width: 22px;
   height: 22px;
-  background: #000;
+  background: brown;
   color: white;
   text-align: center;
   font-size: 13px;
+  font-weight: bold;
   position: relative;
   top: -10px;
   left: -10px;
+  transition: 0.4s ease;
 }
+
+.hide {
+  display: none;
+}
+
+.popout {
+  animation: popout 0.4s ease;
+  -webkit-animation: popout 0.4s ease;
+}
+@keyframes popout {
+  from {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes popout {
+  from {
+    -webkit-transform: scale(0);
+  }
+  80% {
+    -webkit-transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+/*Main page related CSS */
 
 .store {
   display: flex;
@@ -87,17 +116,6 @@
   padding-bottom: 30px;
 }
 
-.pizza-detail {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
 .gallery-card {
   width: 350px;
   height: 320px;
@@ -105,25 +123,12 @@
   border-radius: 0;
 }
 
-.pizza-card {
-  transition: 0.3s ease;
-  border-radius: 0;
+.gallery-card-body-info {
   display: flex;
   flex-direction: row;
 }
 
-.pizza-img{
-  width: 500px;
-  object-fit: cover;
-}
-
-
-.gallery-card-body-info{
-  display: flex;
-  flex-direction: row;
-}
-
-.gallery-card-body-left{
+.gallery-card-body-left {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -131,7 +136,7 @@
   justify-content: center;
 }
 
-.gallery-card-body-right{
+.gallery-card-body-right {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -153,12 +158,38 @@
   border-radius: 0;
 }
 
-.gallery-card-title{
-  cursor: pointer; 
+.gallery-card-title {
+  cursor: pointer;
 }
 
 .gallery-card-data {
   cursor: pointer;
+}
+
+/*Detail page CSS */
+
+.pizza-detail {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.pizza-card {
+  transition: 0.3s ease;
+  border-radius: 0;
+  display: flex;
+  flex-direction: row;
+  min-width: 1000px;
+}
+
+.pizza-detail-img {
+  width: 500px;
+  object-fit: cover;
 }
 
 .ingredients {
@@ -170,7 +201,7 @@
   font-size: 14px;
 }
 
-.add-pizza{
+.add-pizza {
   width: 150px;
   color: white;
   font-size: 14px;
@@ -178,9 +209,147 @@
   border-radius: 0;
 }
 
-.gallery-price{
+/*Cart Related CSS*/
+
+.cart-detail {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.cart-card {
+  width: 100%;
+  min-width: 600px;
+  height: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.cart-empty {
+  width: 800px;
+  height: 100px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.pizza-cart-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: fill;
+  border: 1px dashed;
+}
+
+.pizza-qty {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.item-qty {
+  font-size: 20px;
+  position: relative;
+  top: 7px;
+}
+
+.total-qty {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 7px;
+}
+
+.qty-button,
+.qty-minus-button {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  color: black;
+}
+
+.qty-button p {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 20px;
+}
+
+.qty-minus-button p {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 20px;
+}
+
+.cart-button {
+  display: flex;
+  justify-content: end;
+}
+
+.cart-total-button {
+  display: flex;
+  justify-content: center;
+}
+
+.delete-cart-item{
+  width: 50px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.cart-price {
+  display: flex;
+  justify-content: end;
+  position: relative;
   color: red;
   font-weight: bold;
   font-size: 20px;
   text-align: center;
+  top: 7px;
+}
+
+.price {
+  display: flex;
+  justify-content: center;
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.cart-total-price {
+  display: flex;
+  justify-content: center;
+  color: red;
+  font-weight: bold;
+  font-size: 25px;
+  position: relative;
+  top: 5px;
+}
+
+.calculo-total {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pay-card {
+  width: 80%;
+  min-width: 600px;
+  height: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
 }

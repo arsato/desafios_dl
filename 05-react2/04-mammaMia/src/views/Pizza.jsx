@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { PizzaContext } from "../PizzaContext";
 
@@ -41,7 +41,7 @@ const Pizza = () => {
       <div className="pizza-detail">
         {result ? (
           <div className="card bg-light pizza-card">
-            <img className="pizza-img" src={result.img}></img>
+            <img className="pizza-detail-img" src={result.img}></img>
             <div className="card-body">
               <h5 className="card-title">{betterName(result.name)}</h5>
               <hr />
@@ -58,7 +58,12 @@ const Pizza = () => {
                 <h3 className="price">{priceFormat.format(result.price)}</h3>
                 <div className="overlay" />
                 <div className="buttons">
-                  <button className="btn btn-danger" onClick={() => addQty(result.id)}>Añadir 🛒</button>
+                  <button
+                    className="btn btn-danger add-pizza"
+                    onClick={() => addQty(result.id)}
+                  >
+                    Añadir 🛒
+                  </button>
                 </div>
               </div>
             </div>

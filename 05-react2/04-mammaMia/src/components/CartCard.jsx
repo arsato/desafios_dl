@@ -56,26 +56,28 @@ const CartCard = ({ image, name, price, id, qty }) => {
   };
 
   return (
-    <div className="card bg-light gallery-card">
-      <img className="gallery-card-img-top" src={image} />
-      <div className="card-body">
-        <div className="gallery-card-body-info">
-          <div className="gallery-card-body-left">
-            <h5 className="gallery-card-title">{betterName(name)}</h5>
-            <div className="gallery-card-data">
-              <button onClick={() => minusQty(id)}>-</button>
-              <p>{qty}</p>
-              <button onClick={() => addQty(id)}>+</button>
-            </div>
-          </div>
-          <div className="card-body-right">
-            <p className="gallery-price">{priceFormat.format(price)}</p>
-            <p className="gallery-price">Total:{priceFormat.format(price*qty)}</p>
-            <div className="buttons">
-              <button className="btn btn-danger add-pizza" onClick={() => deleteItem(id)}>Eliminar 🗑️</button>
-            </div>
-          </div>
-        </div>
+    <div className="card bg-light cart-card">
+      <img className="pizza-cart-img" src={image} />
+      <h5 className="pizza-title">{betterName(name)}</h5>
+      <div className="pizza-qty">
+        <button className="qty-minus-button" onClick={() => minusQty(id)}>
+          <p>-</p>
+        </button>
+        <p className="item-qty">{qty}</p>
+        <button className="qty-button" onClick={() => addQty(id)}>
+          <p>+</p>
+        </button>
+      </div>
+      <div className="cart-price">
+        <p className="item-price">{priceFormat.format(price * qty)}</p>
+      </div>
+      <div className="cart-button">
+        <button
+          className="btn btn-danger delete-cart-item"
+          onClick={() => deleteItem(id)}
+        >
+          🗑️
+        </button>
       </div>
     </div>
   );

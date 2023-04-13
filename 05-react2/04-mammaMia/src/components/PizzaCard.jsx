@@ -5,7 +5,7 @@ import { PizzaContext } from "../PizzaContext";
 const PizzaCard = ({ image, name, ingredients, price, id }) => {
   const navigate = useNavigate();
   const { carrito, setCarrito, count, setCount, total, setTotal } =
-  useContext(PizzaContext);
+    useContext(PizzaContext);
   const result = carrito.find((item) => item.id === id);
 
   const betterName = (data) => {
@@ -28,21 +28,24 @@ const PizzaCard = ({ image, name, ingredients, price, id }) => {
   };
 
   const addQty = (ele) => {
-    let updateCarrito = carrito.map(item => 
-      {
-        if (item.id == ele){
-          return {...item, qty: result.qty+1}
-        }
-        return item
-      });
-    setCarrito(updateCarrito)
-    setCount(count + 1)
-    setTotal(total + price)
-  }
+    let updateCarrito = carrito.map((item) => {
+      if (item.id == ele) {
+        return { ...item, qty: result.qty + 1 };
+      }
+      return item;
+    });
+    setCarrito(updateCarrito);
+    setCount(count + 1);
+    setTotal(total + price);
+  };
 
   return (
     <div className="card bg-light gallery-card">
-      <img className="gallery-card-img-top" src={image} onClick={detallePizza} />
+      <img
+        className="gallery-card-img-top"
+        src={image}
+        onClick={detallePizza}
+      />
       <div className="card-body">
         <div className="gallery-card-body-info">
           <div className="gallery-card-body-left">
@@ -63,9 +66,14 @@ const PizzaCard = ({ image, name, ingredients, price, id }) => {
             </div>
           </div>
           <div className="card-body-right">
-            <p className="gallery-price">{priceFormat.format(price)}</p>
+            <p className="price">{priceFormat.format(price)}</p>
             <div className="buttons">
-              <button className="btn btn-danger add-pizza" onClick={() => addQty(id)}>Añadir 🛒</button>
+              <button
+                className="btn btn-danger add-pizza"
+                onClick={() => addQty(id)}
+              >
+                Añadir 🛒
+              </button>
             </div>
           </div>
         </div>

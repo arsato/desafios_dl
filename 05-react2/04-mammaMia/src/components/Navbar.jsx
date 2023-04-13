@@ -6,15 +6,14 @@ import { PizzaContext } from "../PizzaContext";
 
 const Navbar = () => {
   const {count} = useContext(PizzaContext)
-  const {total} = useContext(PizzaContext)
 
   return (
-    <div className="navbar">
+    <div className="navbar sticky-top">
       <Link className="navbar-brand" to="/">
         <img src={logo}></img>
       </Link>
       <Link className="shopping-cart" to="/carrito">
-      🛒 <span className={count ? "counter-show" : ""}>{count}</span> <span>{total}</span>
+      🛒 <span className={count != 0 ? "counter show popout" : "counter hide"}>{count}</span>
       </Link>
     </div>
   );
