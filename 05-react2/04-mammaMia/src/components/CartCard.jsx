@@ -75,6 +75,7 @@ const CartCard = ({ image, name, price, id, qty }) => {
         <button
           className="btn btn-danger delete-cart-item"
           onClick={() => deleteItem(id)}
+          title="Eliminar"
         >
           🗑️
         </button>

@@ -55,9 +55,8 @@ const Pizza = () => {
                     </p>
                   ))}
                 </div>
+                <div className="card-footer">
                 <h3 className="price">{priceFormat.format(result.price)}</h3>
-                <div className="overlay" />
-                <div className="buttons">
                   <button
                     className="btn btn-danger add-pizza"
                     onClick={() => addQty(result.id)}

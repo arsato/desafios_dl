@@ -12,7 +12,7 @@ const Carrito = () => {
 
   return (
     <div className="store">
-      <div className="cart-title">MI PEDIDO</div>
+      <div className="cart-title">MI PEDIDO:</div>
       <div className="cart-detail">
         {count != 0 ? (
           carrito

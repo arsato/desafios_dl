@@ -5,7 +5,8 @@
   font-family: Roboto;
 }
 
-/*Navbar related CSS */
+/*Navbar related CSS
+--------------------*/
 .navbar {
   padding-left: 50px;
   padding-right: 50px;
@@ -15,6 +16,31 @@
   align-content: center;
   height: 80px;
   color: white;
+}
+
+.navbar-inner{
+  width: 60%;
+  font-size: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-inner p{
+  margin: 0;
+  font-size: 14px;
+}
+
+.navbar-icon{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-icon:hover{
+  color: brown;
 }
 
 .navbar-brand {
@@ -82,8 +108,8 @@
   }
 }
 
-/*Main page related CSS */
-
+/*Main page related CSS
+--------------------*/
 .store {
   display: flex;
   flex-direction: column;
@@ -93,16 +119,23 @@
 
 .hero {
   width: 100%;
-  height: 50vh;
+  height: 30vh;
   overflow: hidden;
   position: relative;
 }
 
-.hero img {
+.hero .hero-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+}
+
+.hero .hero-logo {
+  position: absolute;
+  top: 3%;
+  left: 37.5%;
+  width: 25%;
 }
 
 .pizza-gallery {
@@ -166,7 +199,8 @@
   cursor: pointer;
 }
 
-/*Detail page CSS */
+/*Detail page CSS
+--------------------*/
 
 .pizza-detail {
   width: 70%;
@@ -209,7 +243,21 @@
   border-radius: 0;
 }
 
-/*Cart Related CSS*/
+.card-footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*Cart Related CSS
+--------------------*/
+.cart-title{
+  width: 70%;
+  font-weight: bold;
+  font-size: 32px;
+  align-items: start;
+  margin-top: 10px;
+}
 
 .cart-detail {
   width: 60%;
@@ -217,7 +265,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-bottom: 30px;
 }
 
