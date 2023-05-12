@@ -36,7 +36,7 @@ SELECT
 	p.contenido
 FROM
 	usuarios u
-	JOIN posts p ON u.id = p.usuario_id
+	JOIN posts p ON u.id = p.usuario_id;
 
 /*3. Muestra el id, título y contenido de los posts de los administradores. El administrador puede ser cualquier id y debe ser seleccionado dinámicamente.*/
 
@@ -64,7 +64,7 @@ GROUP BY
 	u.id,
 	u.email
 ORDER BY
-	total_posts desc
+	total_posts desc;
 
 /*5. Muestra el email del usuario que ha creado más posts. Aquí la tabla resultante tiene
 un único registro y muestra solo el email.*/
@@ -97,7 +97,7 @@ WHERE
 				GROUP BY
 					email
 			) as total_posts
-	)
+	);
 
 /*6. Muestra la fecha del último post de cada usuario*/
 
@@ -116,7 +116,7 @@ FROM
 			JOIN posts p ON u.id = p.usuario_id
 	) as fechas
 GROUP BY
-	nombre
+	nombre;
 
 /* 7. Muestra el título y contenido del post (artículo) con más comentarios */
 
@@ -153,7 +153,7 @@ WHERE
 					p.titulo,
 					p.contenido
 			) as conteo_comentarios
-	)
+	);
 
 /*8. Muestra en una tabla el título de cada post, el contenido de cada post
 y el contenido de cada comentario asociado a los posts mostrados, junto con el email del usuario que lo escribió.*/
@@ -166,7 +166,7 @@ SELECT
 FROM
 	posts p
 	JOIN comentarios c ON p.id = c.post_id
-	JOIN usuarios u ON c.usuario_id = u.id
+	JOIN usuarios u ON c.usuario_id = u.id;
 
 /*9. Muestra el contenido del último comentario de cada usuario.*/
 
@@ -184,7 +184,7 @@ WHERE
 			comentarios
 		WHERE
 			usuario_id = u.id
-	)
+	);
 
 /*10. Muestra los emails de los usuarios que no han escrito ningún comentario.*/
 
@@ -196,4 +196,4 @@ FROM
 GROUP BY
 	u.email
 HAVING
-	COUNT(c.id) = 0
+	COUNT(c.id) = 0;
